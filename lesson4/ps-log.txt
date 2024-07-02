@@ -1,0 +1,120 @@
+Script started on 2024-07-02 00:23:07+03:00 [TERM="linux" TTY="/dev/tty1" COLUMNS="160" LINES="50"]
+[?2004haleks@codeby:~$ exit[2Plspwdcd aleks/[1Phome/ls boot/[Kcd ..[2Ppwdnano my.log [7Pclearat my.log [1@nano[C[C[C[C[C[C[C[Cls[Knano my.log [8Pcopynano my.log [1Pcat[C[C[C[C[C[C[C[Cls[Kexitkill 945[3Ptop &ps -Faux
+[?2004lUSER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.6  22028 13160 ?        Ss   июл01   0:00 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    июл01   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    июл01   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-rcu_g]
+root           5  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-rcu_p]
+root           6  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-slub_]
+root           7  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-netns]
+root           8  0.0  0.0      0     0 ?        I    июл01   0:00 [kworker/0:0-events]
+root           9  0.0  0.0      0     0 ?        I    июл01   0:00 [kworker/0:1-cgroup_destroy]
+root          10  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/0:0H-kblockd]
+root          11  0.0  0.0      0     0 ?        I    июл01   0:00 [kworker/u2:0-events_unbound]
+root          12  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-mm_pe]
+root          13  0.0  0.0      0     0 ?        I    июл01   0:00 [rcu_tasks_kthread]
+root          14  0.0  0.0      0     0 ?        I    июл01   0:00 [rcu_tasks_rude_kthread]
+root          15  0.0  0.0      0     0 ?        I    июл01   0:00 [rcu_tasks_trace_kthread]
+root          16  0.0  0.0      0     0 ?        S    июл01   0:00 [ksoftirqd/0]
+root          17  0.0  0.0      0     0 ?        R    июл01   0:00 [rcu_preempt]
+root          18  0.0  0.0      0     0 ?        S    июл01   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    июл01   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    июл01   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    июл01   0:00 [kdevtmpfs]
+root          22  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-inet_]
+root          24  0.0  0.0      0     0 ?        S    июл01   0:00 [kauditd]
+root          25  0.0  0.0      0     0 ?        S    июл01   0:00 [khungtaskd]
+root          26  0.0  0.0      0     0 ?        S    июл01   0:00 [oom_reaper]
+root          28  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-write]
+root          29  0.0  0.0      0     0 ?        S    июл01   0:00 [kcompactd0]
+root          30  0.0  0.0      0     0 ?        SN   июл01   0:00 [ksmd]
+root          31  0.0  0.0      0     0 ?        SN   июл01   0:00 [khugepaged]
+root          32  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-kinte]
+root          33  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-kbloc]
+root          34  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-blkcg]
+root          35  0.0  0.0      0     0 ?        S    июл01   0:00 [irq/9-acpi]
+root          36  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-tpm_d]
+root          37  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-ata_s]
+root          38  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-md]
+root          39  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-md_bi]
+root          40  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-edac-]
+root          41  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-devfr]
+root          42  0.0  0.0      0     0 ?        S    июл01   0:00 [watchdogd]
+root          44  0.0  0.0      0     0 ?        S    июл01   0:00 [kswapd0]
+root          45  0.0  0.0      0     0 ?        S    июл01   0:00 [ecryptfs-kthread]
+root          46  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-kthro]
+root          47  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-acpi_]
+root          48  0.0  0.0      0     0 ?        S    июл01   0:00 [scsi_eh_0]
+root          49  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-scsi_]
+root          50  0.0  0.0      0     0 ?        S    июл01   0:00 [scsi_eh_1]
+root          51  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-scsi_]
+root          53  0.0  0.0      0     0 ?        I    июл01   0:00 [kworker/u2:4-events_power_efficient]
+root          55  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-mld]
+root          56  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-ipv6_]
+root          63  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-kstrp]
+root          65  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/u3:0]
+root          70  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-crypt]
+root          81  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-charg]
+root         128  0.0  0.0      0     0 ?        S    июл01   0:00 [scsi_eh_2]
+root         130  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-scsi_]
+root         159  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-kdmfl]
+root         188  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-raid5]
+root         227  0.0  0.0      0     0 ?        S    июл01   0:00 [jbd2/dm-0-8]
+root         228  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-ext4-]
+root         316  0.0  0.7  66884 15872 ?        Ss   июл01   0:00 /usr/lib/systemd/systemd-journald
+root         322  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-kmpat]
+root         323  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-kmpat]
+root         348  0.0  1.3 289112 27392 ?        SLsl июл01   0:00 /sbin/multipathd -d -s
+root         373  0.0  0.3  29040  7680 ?        Ss   июл01   0:00 /usr/lib/systemd/systemd-udevd
+root         374  0.0  0.0      0     0 ?        S    июл01   0:00 [psimon]
+root         454  0.0  0.0      0     0 ?        S    июл01   0:00 [irq/18-vmwgfx]
+root         457  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-ttm]
+root         471  0.0  0.0      0     0 ?        S    июл01   0:00 [jbd2/sda2-8]
+root         472  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-ext4-]
+systemd+     542  0.0  0.4  18996  9600 ?        Ss   июл01   0:00 /usr/lib/systemd/systemd-networkd
+systemd+     553  0.0  0.6  21584 12800 ?        Ss   июл01   0:00 /usr/lib/systemd/systemd-resolved
+systemd+     558  0.0  0.3  91020  7808 ?        Ssl  июл01   0:00 /usr/lib/systemd/systemd-timesyncd
+root         612  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/R-cfg80]
+root         649  0.0  0.4  18200  8832 ?        S<s  июл01   0:00 /usr/lib/systemd/systemd-logind
+message+     650  0.0  0.2   9776  5504 ?        Ss   июл01   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslo
+polkitd      655  0.0  0.4 383748  9632 ?        Ssl  июл01   0:00 /usr/lib/polkit-1/polkitd --no-debug
+root         663  0.0  0.6 468980 13568 ?        Ssl  июл01   0:00 /usr/libexec/udisks2/udisksd
+root         682  0.0  1.1 109632 22784 ?        Ssl  июл01   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-sig
+root         729  0.0  0.6 392096 12672 ?        Ssl  июл01   0:00 /usr/sbin/ModemManager
+syslog       730  0.0  0.3 222508  6144 ?        Ssl  июл01   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         731  0.0  0.0      0     0 ?        I<   июл01   0:00 [kworker/0:2H-kblockd]
+root         769  0.0  0.1   6824  2688 ?        Ss   июл01   0:00 /usr/sbin/cron -f -P
+root         775  0.0  0.3  12020  7936 ?        Ss   июл01   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root         781  0.0  0.2   6964  4772 tty1     Ss   июл01   0:00 /bin/login -p --
+root         913  0.0  0.0      0     0 ?        S    июл01   0:00 [psimon]
+aleks        915  0.0  0.5  20320 11520 ?        Ss   июл01   0:00 /usr/lib/systemd/systemd --user
+aleks        916  0.0  0.1  21148  3520 ?        S    июл01   0:00 (sd-pam)
+aleks        929  0.0  0.2   8760  5760 tty1     S    июл01   0:00 -bash
+root        1018  0.0  0.4 314064  9088 ?        Ssl  июл01   0:00 /usr/libexec/upowerd
+root        1032  0.0  0.0      0     0 ?        I    июл01   0:00 [kworker/u2:3-events_power_efficient]
+root        1273  0.0  0.4  14968  8520 ?        Ss   00:05   0:00 sshd: aleks [priv]
+aleks       1320  0.0  0.3  14968  6852 ?        S    00:05   0:00 sshd: aleks@pts/0
+aleks       1321  0.0  0.2   8752  5760 pts/0    Ss+  00:05   0:00 -bash
+root        1905  0.0  0.0      0     0 ?        I    00:19   0:00 [kworker/u2:1]
+root        1908  0.0  0.0      0     0 ?        I    00:20   0:00 [kworker/0:2]
+aleks       1919  0.0  0.1   5704  2176 tty1     S+   00:23   0:00 script my.log
+aleks       1920  0.0  0.2   8656  5376 pts/1    Ss   00:23   0:00 bash -i
+aleks       1926  0.0  0.2  10884  4480 pts/1    R+   00:23   0:00 ps aux
+[?2004haleks@codeby:~$ ps aux[2Pexit[2Plspwdcd aleks/[1Phome/ls boot/[Kcd ..[2Ppwdnano my.log [7Pclearat my.log [1@nano[C[C[C[C[C[C[C[Cls[Knano my.log [8Pcopynano my.log [1Pcat[C[C[C[C[C[C[C[Cls[Kexitkill 945[3Ptop &ps -F
+[?2004lUID          PID    PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+aleks       1920    1919  0  2164  5376   0 00:23 pts/1    00:00:00 bash -i
+aleks       1927    1920  0  2725  4480   0 00:23 pts/1    00:00:00 ps -F
+[?2004haleks@codeby:~$ ps -Faux[2Pexit[2Plspwdcd aleks/[1Phome/ls boot/[Kcd ..[2Ppwdnano my.log [7Pclearat my.log [1@nano[C[C[C[C[C[C[C[Cls[Knano my.log [8Pcopynano my.log [1Pcat[C[C[C[C[C[C[C[Cls[Kexitkill 945[3Ptop &
+[?2004l[1] 1928
+[?2004haleks@codeby:~$ top &[K[K[K[K[Kkill 1928
+[?2004l
+[1]+  Stopped                 top
+[?2004haleks@codeby:~$ kill 1928[4Ptop &ps -Faux[2Pexit
+[?2004lexit
+There are stopped jobs.
+[?2004haleks@codeby:~$ exit
+[?2004lexit
+
+
+Script done on 2024-07-02 00:24:01+03:00 [COMMAND_EXIT_CODE="1"]

@@ -1,0 +1,44 @@
+Script started on 2024-07-02 21:50:49+03:00 [TERM="linux" TTY="/dev/tty1" COLUMNS="160" LINES="50"]
+[?2004haleks@codeby:~$ exitscript java.log[2Pcat java.log [K[K[K[K[K[K[K[K[K[K[K[K[Kngin[K[K[K[Knginx --ver[K[K[K[Kv
+[?2004lnginx version: nginx/1.24.0 (Ubuntu)
+[?2004haleks@codeby:~$ nginx -v[4Pexit[K[K[K[Ksudo systemctl status nginx.service 
+[?2004l[sudo] password for aleks: 
+○ nginx.service - A high performance web server and a reverse proxy server[m
+     Loaded: loaded (]8;;file://codeby/etc/systemd/system/nginx.service/etc/systemd/system/nginx.service]8;;; [0;1;38;5;185mdisabled[0m; preset: [0;1;32menabled[0m)[m
+     Active: inactive (dead)[m
+[m
+июл 02 16:29:18 codeby systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...[m
+июл 02 16:29:18 codeby systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.[m
+июл 02 16:30:34 codeby systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...[m
+июл 02 16:30:39 codeby systemd[1]: nginx.service: Deactivated successfully.[m
+июл 02 16:30:39 codeby systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.[m
+июл 02 16:35:40 codeby systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...[m
+июл 02 16:35:40 codeby systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.[m
+июл 02 21:49:59 codeby systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...[m
+июл 02 21:49:59 codeby systemd[1]: nginx.service: Deactivated successfully.[m
+июл 02 21:49:59 codeby systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.[m
+[K[?2004haleks@codeby:~$ sudo systemctl status nginx.service [1P[1P[1P[1P[1P[1P[1P[1P[1@e[1@n[1@a[1@b[1@l[1@ [1P[1@e[1@ [1@n
+[?2004lSynchronizing state of nginx.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable nginx
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /etc/systemd/system/nginx.service.
+[?2004haleks@codeby:~$ sudo systemctl enable nginx.service [1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[1@s[1@t[1@a[1@r[1@t[1@ [1@n[1@g[1@i[1@n[C[1@s[1P[1@x[1@.
+[?2004l[?2004haleks@codeby:~$ sudo systemctl start nginx.service [1@enable[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[0;1;32m●[0m nginx.service - A high performance web server and a reverse proxy server[m
+     Loaded: loaded (]8;;file://codeby/etc/systemd/system/nginx.service/etc/systemd/system/nginx.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)[m
+     Active: [0;1;32mactive (running)[0m since Tue 2024-07-02 21:52:21 +03; 3s ago[m
+    Process: 7504 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[m
+    Process: 7506 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[m
+   Main PID: 7507 (nginx)[m
+      Tasks: 2 (limit: 2276)[m
+     Memory: 1.7M (peak: 1.9M)[m
+        CPU: 4ms[m
+     CGroup: /system.slice/nginx.service[m
+             ├─[0;38;5;245m7507 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"[0m[m
+             └─[0;38;5;245m7508 "nginx: worker process"[0m[m
+[m
+июл 02 21:52:21 codeby systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...[m
+июл 02 21:52:21 codeby systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.[m
+[K[?2004haleks@codeby:~$ sudo systemctl status nginx.service [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kcat [K[K[Kat [K[K[K[Kexit
+[?2004lexit
+
+Script done on 2024-07-02 21:52:44+03:00 [COMMAND_EXIT_CODE="0"]
