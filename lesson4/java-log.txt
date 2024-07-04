@@ -1,0 +1,25 @@
+Script started on 2024-07-02 15:18:16+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="157" LINES="54"]
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ exitscript java.log[10Pclearls -l[Kpwdcd aleks/[6Ppwd[1Plscd home/[3Pls -l[K[K[K[K[Kjava --version 
+[?2004lopenjdk 17.0.11 2024-04-16
+OpenJDK Runtime Environment (build 17.0.11+9-Ubuntu-1)
+OpenJDK 64-Bit Server VM (build 17.0.11+9-Ubuntu-1, mixed mode, sharing)
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ java --version exit[K[K[K[K[Ksudo inst[K[K[Kpda[K[K[K[Kupdate-alternatives --congi[K[Kfin[Kf[Kg java
+[?2004l[sudo] password for aleks: 
+Есть 2 варианта для альтернативы java (предоставляет /usr/bin/java).
+
+  Выбор   Путь                                     Приор Состояние
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-21-openjdk-amd64/bin/java   2111      автоматический режим
+* 1            /usr/lib/jvm/java-17-openjdk-amd64/bin/java   1711      ручной режим
+  2            /usr/lib/jvm/java-21-openjdk-amd64/bin/java   2111      ручной режим
+
+Нажмите «enter», чтобы не менять текущий выбор[*], или введите нужное число: 2
+update-alternatives: используется /usr/lib/jvm/java-21-openjdk-amd64/bin/java для предоставления /usr/bin/java (java) в ручном режиме
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ java -- v[K[Kversion 
+[?2004lopenjdk 21.0.3 2024-04-16
+OpenJDK Runtime Environment (build 21.0.3+9-Ubuntu-1ubuntu1)
+OpenJDK 64-Bit Server VM (build 21.0.3+9-Ubuntu-1ubuntu1, mixed mode, sharing)
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2024-07-02 15:19:26+03:00 [COMMAND_EXIT_CODE="0"]
