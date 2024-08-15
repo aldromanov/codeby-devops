@@ -24,4 +24,4 @@
 
     - name: Display environment
       debug:
-        msg: "This host is in {{ ansible_hostname }} environment"
+        msg: "This host is in {{ env_name }} environment"
