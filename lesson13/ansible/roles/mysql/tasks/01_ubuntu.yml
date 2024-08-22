@@ -1,0 +1,14 @@
+---
+- name: Install MySQL Ubuntu
+  apt:
+    name: mysql-server
+    state: present
+  become: yes
+
+- name: MySQL is started and enabled
+  service:
+    name: mysql
+    state: started
+    enabled: true
+  become: yes
+
