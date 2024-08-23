@@ -1,0 +1,7 @@
+yandex_cloud_id      = ""
+yandex_folder_id     = ""
+key_file             = ""
+vpc_id               = ""
+default_zone         = ""
+ssh_public_key_path  = ""
+ssh_private_key_path = ""
