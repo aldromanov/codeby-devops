@@ -41,6 +41,3 @@ spec:
           value: "wordpress"
         - name: WORDPRESS_DB_PASSWORD
           value: "wordpress"
-      volumes:
-      - name: wp-data
-        emptyDir: {}

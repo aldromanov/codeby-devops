@@ -40,6 +40,3 @@ spec:
           value: "wordpress"
         - name: MYSQL_PASSWORD
           value: "wordpress"
-      volumes:
-      - name: mysql-data
-        emptyDir: {}
