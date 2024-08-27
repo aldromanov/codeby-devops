@@ -1,0 +1,58 @@
+Script started on 2024-08-26 00:16:09+03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="183" LINES="30"]
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ docker network create wp-net && docker volume create wp-db && docker volume create wp-data
+[?2004l
+91cc1ae58f55b1b7e663f7390cfbb8a18811009dda6bdafb75f6debf5154fe6c
+wp-db
+wp-data
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ docker run -d \
+[?2004l
+[?2004h> --name wp-mysql \
+[?2004l
+[?2004h> --network wp-net \
+[?2004l
+[?2004h> -e MYSQL_ROOT_PASSWORD=rootwordpress \
+[?2004l
+[?2004h> -e MYSQL_DATABASE=wordpress \
+[?2004l
+[?2004h> -e MYSQL_USER=wordpress \
+[?2004l
+[?2004h> -e MYSQL_PASSWORD=wordpress \
+[?2004l
+[?2004h> -v wp-db:/var/lib/mysql \
+[?2004l
+[?2004h> mysql:5.7
+[?2004l
+292a30c5bd959f1b9727d1f4b9d5353966c86191601902fcddce18be8fe9f716
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ docker run -d \
+[?2004l
+[?2004h> --name wordpress \
+[?2004l
+[?2004h> --network wp-net \
+[?2004l
+[?2004h> -e WORDPRESS_DB_HOST=wp-mysql:3306 \
+[?2004l
+[?2004h> -e WORDPRESS_DB_USER=wordpress \
+[?2004l
+[?2004h> -e WORDPRESS_DB_PASSWORD=wordpress \
+[?2004l
+[?2004h> -e WORDPRESS_DB_NAME=wordpress \
+[?2004l
+[?2004h> -v wp-data:/var/www/html \
+[?2004l
+[?2004h> -v "$(pwd)"/apache:/etc/apache2/sites-enabled \
+[?2004l
+[?2004h> -p 8880:80 \
+[?2004l
+[?2004h> wordpress
+[?2004l
+803fd6b1eecddb294f7bdc76daa52e856f7d91978ca7c05bf8462841231bbaf7
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ docker ps
+[?2004l
+CONTAINER ID   IMAGE       COMMAND                  CREATED          STATUS          PORTS                  NAMES
+803fd6b1eecd   wordpress   "docker-entrypoint.s…"   6 seconds ago    Up 5 seconds    0.0.0.0:8880->80/tcp   wordpress
+292a30c5bd95   mysql:5.7   "docker-entrypoint.s…"   12 seconds ago   Up 11 seconds   3306/tcp, 33060/tcp    wp-mysql
+[?2004h]0;aleks@codeby: ~[01;32maleks@codeby[00m:[01;34m~[00m$ exit
+[?2004l
+exit
+
+Script done on 2024-08-26 00:16:45+03:00 [COMMAND_EXIT_CODE="0"]
