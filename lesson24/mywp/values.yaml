@@ -1,0 +1,35 @@
+storageClass:
+  name: local-storage
+
+persistentVolume:
+  name: pv-local
+  storage: 2Gi
+  accessModes: ReadWriteOnce
+  values: minikube
+
+secret:
+  root_pswd: ""
+  db: ""
+  user: ""
+  pswd: ""
+
+mysql:
+  name: mysql
+  nameApp: mysql
+  port: 3306
+  serviceName: mysql
+  replicas: 1
+  image: mysql:5.7
+
+wordpress:
+  name: wordpress
+  nameApp: wordpress
+  port: 8880
+  targetPort: 80
+  nodePort: 30080
+  image: wordpress:latest
+
+hpa:
+  minReplicas: 1
+  maxReplicas: 5
+  cpuUtilization: 80
