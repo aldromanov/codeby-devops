@@ -7,18 +7,10 @@ pipeline {
     }
     
     environment {
-        GITHUB_URL = "https://github.com/aldromanov/codeby-devops.git"
-        GITHUB_CRED = "github"
-        GITHUB_BRANCH = "lesson26"
         APP_DIR = "lesson26/world"
     }
     
     stages {
-        stage('CheckOut') {
-            steps {
-                git branch: env.GITHUB_BRANCH, changelog: false, poll: false, credentialsId: env.GITHUB_CRED , url: env.GITHUB_URL
-            }
-        }
         stage('Build') {
             steps {
                 dir(env.APP_DIR) {
