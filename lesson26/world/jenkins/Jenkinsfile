@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir(env.APP_DIR){
+                dir(env.APP_DIR) {
                     sh 'mvn -B -DskipTests clean package'
                 }
                 
@@ -21,19 +21,21 @@ pipeline {
         }
         stage('Test') {
             steps {
-                dir(env.APP_DIR){
+                dir(env.APP_DIR) {
                     sh 'mvn test'
                 }
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    junit '${env.APP_DIR}/target/surefire-reports/*.xml'
                 }
             }
         }
         stage('Deliver') {
             steps {
-                sh './$(env.APP_DIR)/jenkins/scripts/deliver.sh'
+                dir(env.APP_DIR) {
+                    sh './jenkins/scripts/deliver.sh'
+                }
             }
         }
     }
