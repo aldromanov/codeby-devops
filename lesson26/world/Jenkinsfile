@@ -30,10 +30,5 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
-            steps {
-                sh './${env.APP_DIR}/jenkins/scripts/deliver.sh'
-            }
-        }
     }
 }
