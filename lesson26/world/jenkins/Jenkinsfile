@@ -7,32 +7,41 @@ pipeline {
     }
     
     environment {
+        GITHUB_URL = "https://github.com/aldromanov/codeby-devops.git"
+        GITHUB_CRED = "github"
+        GITHUB_BRANCH = "lesson26"
         APP_DIR = "lesson26/world"
     }
-
+    
     stages {
-        dir(APP_DIR) {
-            stage('Build') {
-                steps {
+        stage('CheckOut') {
+            steps {
+                git branch: env.GITHUB_BRANCH, changelog: false, poll: false, credentialsId: env.GITHUB_CRED , url: env.GITHUB_URL
+            }
+        }
+        stage('Build') {
+            steps {
+                dir(env.APP_DIR) {
                     sh 'mvn -B -DskipTests clean package'
                 }
             }
-            stage('Test') {
-                steps {
+        }
+        stage('Test') {
+            steps {
+                dir(env.APP_DIR) {
                     sh 'mvn test'
                 }
-                post {
-                    always {
-                        junit 'target/surefire-reports/*.xml'
-                    }
-                }
             }
-            stage('Deliver') {
-                steps {
-                    sh './jenkins/scripts/deliver.sh'
+            post {
+                always {
+                    junit '**/target/surefire-reports/*.xml'
                 }
             }
         }
-
+        stage('Deliver') {
+            steps {
+                sh './${env.APP_DIR}/jenkins/scripts/deliver.sh'
+            }
+        }
     }
 }
