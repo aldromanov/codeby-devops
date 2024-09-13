@@ -17,8 +17,14 @@ pipeline {
     
     stages {
         stage('Build and Test APP') {
-            parallel{
+            parallel {
                 stage('DEVOPS') {
+                    when {
+                      anyOf {
+                        changelog '.*devops.*'
+                        changeset "${env.APP_DEVOPS}/**"
+                      }
+                    }
                     steps {
                         dir(env.APP_DEVOPS) {
                             sh 'mvn -B -DskipTests clean package'
@@ -32,6 +38,12 @@ pipeline {
                     }
                 }
                 stage('JENKINS') {
+                    when {
+                      anyOf {
+                        changelog '.*jenkins.*'
+                        changeset "${env.APP_JENKINS}/**"
+                      }
+                    }
                     steps {
                         dir(env.APP_JENKINS) {
                             sh 'mvn -B -DskipTests clean package'
@@ -45,6 +57,12 @@ pipeline {
                     }
                 }
                 stage('WORLD') {
+                    when {
+                      anyOf {
+                        changelog '.*world.*'
+                        changeset "${env.APP_WORLD}/**"
+                      }
+                    }
                     steps {
                         dir(env.APP_WORLD) {
                             sh 'mvn -B -DskipTests clean package'
