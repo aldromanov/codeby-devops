@@ -1,0 +1,33 @@
+pipeline {
+    agent {
+        docker {
+            image 'maven:3.9.9'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
+    
+    environment {
+        APP_DEVOPS = "lesson26/devops"
+    }
+    
+    stages {
+        stage('APP DEVOPS') {
+            when {
+                changeset '${env.APP_DEVOPS}/src/main/java/app/*'
+            }
+            steps {
+                dir(env.APP_DEVOPS) {
+                    echo 'Build APP DEVOPS'
+                    sh 'mvn -B -DskipTests clean package'
+                    echo 'Test APP DEVOPS'
+                    sh 'mvn test'
+                } 
+            }
+            post {
+                always {
+                    junit '**/target/surefire-reports/*.xml'
+                }
+            }
+        }
+    }
+}
