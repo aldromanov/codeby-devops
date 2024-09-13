@@ -1,0 +1,63 @@
+pipeline {
+    agent {
+        docker {
+            image 'maven:3.9.9'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
+    
+    environment {
+        //GITHUB_URL = "https://github.com/aldromanov/codeby-devops.git"
+        //GITHUB_CRED = "github"
+        //GITHUB_BRANCH = "lesson26"
+        APP_DEVOPS = "lesson26/devops"
+        APP_JENKINS = "lesson26/jenkins"
+        APP_WORLD = "lesson26/world"
+    }
+    
+    stages {
+        stage('Build and Test APP') {
+            parallel{
+                stage('DEVOPS') {
+                    steps {
+                        dir(env.APP_DEVOPS) {
+                            sh 'mvn -B -DskipTests clean package'
+                            sh 'mvn test'
+                        } 
+                    }
+                    post {
+                        always {
+                            junit '**/target/surefire-reports/*.xml'
+                        }
+                    }
+                }
+                stage('JENKINS') {
+                    steps {
+                        dir(env.APP_JENKINS) {
+                            sh 'mvn -B -DskipTests clean package'
+                            sh 'mvn test'
+                        } 
+                    }
+                    post {
+                        always {
+                            junit '**/target/surefire-reports/*.xml'
+                        }
+                    }
+                }
+                stage('WORLD') {
+                    steps {
+                        dir(env.APP_WORLD) {
+                            sh 'mvn -B -DskipTests clean package'
+                            sh 'mvn test'
+                        } 
+                    }
+                    post {
+                        always {
+                            junit '**/target/surefire-reports/*.xml'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
