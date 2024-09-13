@@ -1,7 +1,7 @@
 package app;
 
 /**
- * Hello Devops!!
+ * Hello Devops!
  */
 
 public class App {
