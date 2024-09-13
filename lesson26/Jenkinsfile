@@ -7,20 +7,20 @@ pipeline {
     }
     
     environment {
-        //GITHUB_URL = "https://github.com/aldromanov/codeby-devops.git"
-        //GITHUB_CRED = "github"
-        //GITHUB_BRANCH = "lesson26"
+        GITHUB_URL = "https://github.com/aldromanov/codeby-devops.git"
+        GITHUB_CRED = "github"
+        GITHUB_BRANCH = "lesson26"
         APP_DEVOPS = "lesson26/devops"
         APP_JENKINS = "lesson26/jenkins"
         APP_WORLD = "lesson26/world"
     }
     
     stages {
-        //stage('CheckOut') {
-        //    steps {
-        //        git branch: env.GITHUB_BRANCH, changelog: false, poll: false, credentialsId: env.GITHUB_CRED , url: env.GITHUB_URL
-        //    }
-        //}
+        stage('CheckOut') {
+            steps {
+                git branch: env.GITHUB_BRANCH, changelog: false, poll: false, credentialsId: env.GITHUB_CRED , url: env.GITHUB_URL
+            }
+        }
         stage('Build and Test APP') {
             parallel{
                 stage('APP DEVOPS') {
