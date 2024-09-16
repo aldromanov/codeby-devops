@@ -6,8 +6,7 @@ package app;
 
 public class App {
 
-    private static final String MESSAGE = "Hello World!";
-    private static final String INFO = "World";    
+    private static final String MESSAGE = "Hello World!";  
 
     public App() {}
 

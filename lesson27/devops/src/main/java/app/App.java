@@ -7,7 +7,6 @@ package app;
 public class App {
 
     private static final String MESSAGE = "Hello Devops!";
-    private static final String INFO = "Devops";
 
     public App() {}
 
