@@ -1,0 +1,149 @@
+pipeline {
+    agent {
+        docker {
+            image 'maven:3.9.9'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
+    
+    environment {
+        GITHUB_URL = "https://github.com/aldromanov/codeby-devops.git"
+        GITHUB_CRED = "github"
+        GITHUB_BRANCH = "lesson27"
+        APP_DEVOPS = "lesson27/devops"
+        APP_JENKINS = "lesson27/jenkins"
+        APP_WORLD = "lesson27/world"
+    }
+    
+    stages {
+        stage('Check out') {
+            steps {
+                git branch: env.GITHUB_BRANCH, changelog: false, credentialsId: env.GITHUB_CRED, poll: false, url: env.GITHUB_URL
+            }
+        }
+        stage('Build and Test APP') {
+            parallel {
+                stage('DEVOPS') {
+                    when { changeset "${env.APP_DEVOPS}/**/*.java" }
+                    stages {
+                        stage ('Build DEVOPS') {
+                            steps {
+                                dir(env.APP_DEVOPS) {
+                                    sh 'mvn -B -DskipTests clean package'
+                                }
+                            }
+                        }       
+                        stage ('Test DEVOPS') {
+                            steps {
+                                dir(env.APP_DEVOPS) {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit '**/target/surefire-reports/*.xml'
+                                    archiveArtifacts '**/target/*.jar'
+                                }
+                            }
+                        }
+                        stage('SonarQube Analysis DEVOPS') {
+                            steps {
+                                dir(env.APP_DEVOPS) {
+                                    withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonarserver') {
+                                        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=devops -Dsonar.projectName='devops'"
+                                    }
+                                }
+                            }
+                        }
+                        stage('SonarQube Quality Gate DEVOPS') {
+                            steps {
+                                sleep 60
+                                waitForQualityGate abortPipeline: true
+                            }
+                        }       
+                    }
+                }
+                stage('JENKINS') {
+                    when { changeset "${env.APP_JENKINS}/**/*.java" }
+                    stages {
+                        stage ('Build JENKINS') {
+                            steps {
+                                dir(env.APP_JENKINS) {
+                                    sh 'mvn -B -DskipTests clean package'
+                                }
+                            }
+                        }       
+                        stage ('Test JENKINS') {
+                            steps {
+                                dir(env.APP_JENKINS) {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit '**/target/surefire-reports/*.xml'
+                                    archiveArtifacts '**/target/*.jar'
+                                }
+                            }
+                        }
+                        stage('SonarQube Analysis JENKINS') {
+                            steps {
+                                dir(env.APP_JENKINS) {
+                                    withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonarserver') {
+                                        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=jenkins -Dsonar.projectName='jenkins'"
+                                    }
+                                }
+                            }
+                        }
+                        stage('SonarQube Quality Gate JENKINS') {
+                            steps {
+                                sleep 60
+                                waitForQualityGate abortPipeline: true
+                            }
+                        }        
+                    }
+                }
+                stage('WORLD') {
+                    when { changeset "${env.APP_WORLD}/**/*.java" }
+                    stages {
+                        stage ('Build WORLD') {
+                            steps {
+                                dir(env.APP_WORLD) {
+                                    sh 'mvn -B -DskipTests clean package'
+                                }
+                            }
+                        }       
+                        stage ('Test WORLD') {
+                            steps {
+                                dir(env.APP_WORLD) {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit '**/target/surefire-reports/*.xml'
+                                    archiveArtifacts '**/target/*.jar'
+                                }
+                            }
+                        }
+                        stage('SonarQube Analysis WORLD') {
+                            steps {
+                                dir(env.APP_WORLD) {
+                                    withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonarserver') {
+                                        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=world -Dsonar.projectName='world'"
+                                    }
+                                }
+                            }
+                        }
+                        stage('SonarQube Quality Gate WORLD') {
+                            steps {
+                                sleep 60
+                                waitForQualityGate abortPipeline: true
+                            }
+                        }        
+                    }
+                }
+            }   
+        }
+    }
+}    
