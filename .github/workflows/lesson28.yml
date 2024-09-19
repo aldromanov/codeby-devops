@@ -16,6 +16,12 @@ jobs:
         with:
           java-version: "17"
           distribution: "temurin"
+      - name: Cache the Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: devops-${{ runner.os }}-m2
+          restore-keys: devops-${{ runner.os }}-m2
       - name: Build project DEVOPS with Maven
         working-directory: ./lesson28/devops
         run: mvn -B package --file pom.xml
@@ -29,6 +35,12 @@ jobs:
         with:
           java-version: "17"
           distribution: "temurin"
+      - name: Cache the Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: jenkins-${{ runner.os }}-m2
+          restore-keys: jenkins-${{ runner.os }}-m2
       - name: Build project JENKINS with Maven
         working-directory: ./lesson28/jenkins
         run: mvn -B package --file pom.xml
@@ -42,6 +54,12 @@ jobs:
         with:
           java-version: "17"
           distribution: "temurin"
+      - name: Cache the Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: world-${{ runner.os }}-m2
+          restore-keys: world-${{ runner.os }}-m2
       - name: Build project WORLD with Maven
         working-directory: ./lesson28/world
         run: mvn -B package --file pom.xml
