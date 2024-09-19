@@ -1,0 +1,47 @@
+name: Lesson28 Maven CI/CD
+
+on:
+  push:
+    branches: [lesson28]
+  pull_request:
+    branches: [lesson28]
+
+jobs:
+  DEVOPS_build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+      - name: Build project DEVOPS with Maven
+        working-directory: ./lesson28/devops
+        run: mvn -B package --file pom.xml
+
+  JENKINS_build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+      - name: Build project JENKINS with Maven
+        working-directory: ./lesson28/jenkins
+        run: mvn -B package --file pom.xml
+  
+  WORLD_build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+      - name: Build project WORLD with Maven
+        working-directory: ./lesson28/world
+        run: mvn -B package --file pom.xml
