@@ -1,0 +1,65 @@
+version: '3.3'
+services:
+  post_db:
+    container_name: post_db
+    image: mongo:3.2
+    volumes:
+      - post_db:/data/db
+    networks:
+      - logging
+
+  ui:
+    container_name: ui
+    image: ${REGISTRY}/ui:${TAG}
+    environment:
+      - POST_SERVICE_HOST=post
+      - POST_SERVICE_PORT=5000
+      - COMMENT_SERVICE_HOST=comment
+      - COMMENT_SERVICE_PORT=9292
+    ports:
+      - 9292:9292
+    depends_on:
+      - comment
+      - post
+    logging:
+      driver: fluentd
+      options:
+        "fluentd-address": "localhost:24224"
+        "tag": "service.ui"
+    networks:
+      - logging
+
+  comment:
+    container_name: comment
+    image: ${REGISTRY}/comment:${TAG}
+    environment:
+      - COMMENT_DATABASE_HOST=post_db
+      - COMMENT_DATABASE=comments
+    depends_on:
+      - post_db
+    networks:
+      - logging
+
+  post:
+    container_name: post
+    image: ${REGISTRY}/post:${TAG}
+    environment:
+      - POST_DATABASE_HOST=post_db
+      - POST_DATABASE=posts
+    depends_on:
+      - post_db
+    ports:
+      - 5000:5000
+    logging:
+      driver: fluentd
+      options:
+        "fluentd-address": "localhost:24224"
+        "tag": "service.post"
+    networks:
+      - logging
+
+volumes:
+  post_db:
+
+networks:
+  logging:
