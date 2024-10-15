@@ -19,6 +19,9 @@
             <a class="nav-link" href="{% url 'notes:add' %}">Новая заметка</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'notes:about' %}">Диплом</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'users:logout' %}">Выйти</a>
           </li>
         {% else %}
@@ -27,6 +30,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'users:signup' %}">Регистрация</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'notes:about' %}">Диплом</a>
           </li>
         {% endif %}
       </ul>

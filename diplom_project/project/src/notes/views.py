@@ -57,3 +57,8 @@ class NotesList(NoteBase, generic.ListView):
 class NoteDetail(NoteBase, generic.DetailView):
     """Заметка подробно."""
     template_name = 'notes/detail.html'
+
+
+class About(generic.TemplateView):
+    """Диплом."""
+    template_name = 'notes/about.html'
