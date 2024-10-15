@@ -47,7 +47,3 @@ variable "nat_ip_address" {
   default = "89.169.145.94"
 }
 
-variable "token_runner" {
-  type      = string
-  sensitive = true
-}
